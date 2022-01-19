@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.App {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.PostTodo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    background-color: #808080;
+}
+
+.input__todo {
+    margin-right: 5px;
+}
+
+.btn__redact {
+    margin-right: 10px;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.form__todo {
+    display: flex;
+    margin: 10px 0;
+}
