@@ -25,12 +25,17 @@ body {
     align-items: center;
     padding: 5px 5px;
     margin-bottom: 5px;
-    border-radius: 2px;
-    background-color: #808080;
+    border-radius: 4px;
+    background-color: #c2c2c2;
 }
 
 .input__todo {
     margin-right: 5px;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
 }
 
 .btn__redact {
@@ -44,4 +49,50 @@ body {
 .form__todo {
     display: flex;
     margin: 10px 0;
+}
+
+.all__delete {
+    background-color: DodgerBlue; 
+    border: none; 
+    color: white; 
+    padding: 5px 8px; 
+    font-size: 12px; 
+    cursor: pointer; 
+    border-radius: 2px;
+}
+
+.btn__delete:hover {
+    background-color: RoyalBlue;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn__trash {
+    background-color: DodgerBlue; 
+    border: none;
+    color: white;
+    padding: 5px 8px; 
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.btn__trash:hover {
+    background-color: RoyalBlue;
+}
+
+.btn__redact {
+    background-color: DodgerBlue; 
+    border: none; 
+    color: white; 
+    padding: 5px 8px;
+    cursor: pointer; 
+    border-radius: 2px;
+}
+
+.btn__redact:hover {
+    background-color: RoyalBlue;
 }

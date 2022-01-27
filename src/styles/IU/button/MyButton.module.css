@@ -1,7 +1,8 @@
 .myButton {
     padding: 5px 10px;
-    border: 1px solid #808080;
+    border: none;
     cursor: pointer;
-    background-color: rgb(0, 63, 199);
+    background-color: DodgerBlue;
     color: #fff;
+    border-radius: 2px;
 }

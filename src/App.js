@@ -13,26 +13,29 @@ function App() {
   ]);
 
   const toggleTodo = (id) => {
-    setTodos(todos.map((todo) => {
+    setTodos((prevTodos) => {
+      const newTodoList = prevTodos.map((todo) => {
       if(todo.id === id) {
         todo.completed = !todo.completed
       }
       return todo
-    }))
+    })
+    return newTodoList.sort((a, b) => a.completed - b.completed)
+    });
   }
 
-  const doneTask = (todo) => {
-    let copy = [...TodoList]
-    setTodos(todos.map((todo) => {
-      if(todo.completed) {
-        copy = [...copy, {index: TodoList.length + 1}]
+  const renameTodo = (id, value) => {
+    const rename = todos.map((todo) => {
+      if(todo.id === id) {
+        todo.title = value;
       }
-    }))
-    return setTodos(copy)
+      return todo;
+    })
+    setTodos(rename)
   }
 
   const deleteForm = () => {
-    
+    setTodos([])
   }
 
   const removeTodo = (id) => {
@@ -43,12 +46,17 @@ function App() {
     setTodos([...todos, newTodo])
   }
 
+  const activeSize = todos.filter((todo) => todo.completed).length
+
   return (
       <div className="App">
         <h1>Todo App</h1>
         <AddForm create={createTodo}/>
-        <TodoList todos={todos} onToggle={toggleTodo} remove={removeTodo}/>
-        <button onClick={deleteForm}></button>
+        <TodoList todos={todos} onToggle={toggleTodo} remove={removeTodo} rename={renameTodo}/>
+        <div className='footer'>
+          <h6>Количество выполненных задач: {activeSize}</h6>
+          <button className='all__delete' onClick={deleteForm}><i class="fa fa-trash"></i>Clear all</button>
+        </div>
       </div>
   );
 }
